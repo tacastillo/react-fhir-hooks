@@ -12,3 +12,12 @@ export interface IUseResource {
   loading: LoadingState;
   error: unknown;
 }
+
+interface IPatientParsed {
+  fullName: string;
+  lastName: string;
+  firstName: string;
+  gender: string;
+}
+
+export interface IUsePatient extends IUseResource, IPatientParsed {}

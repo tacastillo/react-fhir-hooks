@@ -4,23 +4,32 @@ import Client from 'fhirclient/lib/Client';
 import { mockClient } from './mocks/mockClient';
 import Patient from './mocks/Patient.json';
 
-import { useResource } from '../src';
+import usePatient from '../src/hooks/usePatient';
+
 import { LoadingState } from '../src/rfh-types';
 
-test('that a resource can be fetched', async () => {
+test('that the patient can be fetched', async () => {
   const client = mockClient(Patient);
   const { result, waitForNextUpdate } = renderHook(() =>
-    useResource(client as Client, 'Patient/1231323')
+    usePatient(client as Client)
   );
 
   expect(result.current).toEqual({
-    loading: LoadingState.IN_PROGRESS
+    loading: LoadingState.IN_PROGRESS,
+    firstName: '',
+    lastName: '',
+    fullName: '',
+    gender: ''
   });
 
   await waitForNextUpdate();
 
   expect(result.current).toEqual({
     resource: Patient,
-    loading: LoadingState.SUCCESS
+    loading: LoadingState.SUCCESS,
+    firstName: 'Peter',
+    lastName: 'Chalmers',
+    fullName: 'Peter James Chalmers',
+    gender: 'male'
   });
 });
