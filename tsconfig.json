@@ -1,14 +1,15 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
-    "target": "es2015",
+    "target": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
     "declaration": true,
-    "outDir": "./dist",
-    "types": [
-      "node"
-    ]
+    "allowJs": true,
+    "noEmit": true,
+    "strict": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "types": ["node", "jest"]
   },
-  "include": [
-    "src/**/*"
-  ]
+  "include": ["src/**/*", "tests"]
 }

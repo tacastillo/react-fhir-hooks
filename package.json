@@ -3,33 +3,45 @@
   "version": "1.0.0",
   "description": "A library of React hooks that easily query and parse through HL7 FHIR resources and search results",
   "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "types": "dist/types.d.js",
   "repository": "https://github.com/tacastillo/react-fhir-hooks.git",
   "author": "Tim Castillo",
   "license": "MIT",
   "scripts": {
-    "build": "tsc",
+    "build": "babel src --out-dir dist  --extensions .ts",
+    "typecheck": "tsc",
+    "typecheck:watch": "tsc --watch",
+    "test": "jest",
+    "test:watch": "jest --watch",
     "lint": "eslint . --ext .ts",
     "lint-fix": "eslint . --ext .ts --fix",
-    "format": "prettier --config .prettierrc 'src/**/*.ts' --write"
+    "format": "prettier --config .prettierrc 'src/**/*.ts' --write",
+    "check": "npm run format && npm run lint-fix && npm run typecheck && npm run test"
   },
   "dependencies": {
     "fhirclient": "^2.3.1"
   },
   "peerDependencies": {
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react": "^16.13.1"
   },
   "devDependencies": {
+    "@babel/cli": "^7.10.4",
+    "@babel/core": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "@babel/preset-typescript": "^7.10.4",
     "@testing-library/react-hooks": "^3.3.0",
+    "@types/jest": "^26.0.3",
     "@types/node": "^14.0.14",
     "@typescript-eslint/eslint-plugin": "^3.5.0",
     "@typescript-eslint/parser": "^3.5.0",
+    "babel-jest": "^26.1.0",
     "eslint": "^7.4.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.4",
+    "jest": "^26.1.0",
     "prettier": "^2.0.5",
     "react-test-renderer": "^16.13.1",
+    "ts-jest": "^26.1.1",
     "typescript": "^3.9.6"
   }
 }
