@@ -16,7 +16,8 @@
     "lint": "eslint . --ext .ts",
     "lint-fix": "eslint . --ext .ts --fix",
     "format": "prettier --config .prettierrc 'src/**/*.ts' --write",
-    "check": "npm run format && npm run lint-fix && npm run typecheck && npm run test"
+    "check": "npm run format && npm run lint-fix && npm run typecheck && npm run test",
+    "prepublish": "npm run check && npm run build"
   },
   "dependencies": {
     "fhirclient": "^2.3.1"

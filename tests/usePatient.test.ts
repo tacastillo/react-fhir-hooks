@@ -15,11 +15,7 @@ test('that the patient can be fetched', async () => {
   );
 
   expect(result.current).toEqual({
-    loading: LoadingState.IN_PROGRESS,
-    firstName: '',
-    lastName: '',
-    fullName: '',
-    gender: ''
+    loading: LoadingState.IN_PROGRESS
   });
 
   await waitForNextUpdate();

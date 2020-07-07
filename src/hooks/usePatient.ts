@@ -11,10 +11,10 @@ export const usePatient = (client: Client): IUsePatient => {
   );
 
   const [values, setValues] = useState<IPatientParsed>({
-    firstName: '',
-    fullName: '',
-    gender: '',
-    lastName: ''
+    firstName: undefined,
+    fullName: undefined,
+    lastName: undefined,
+    gender: undefined
   });
 
   useEffect(() => {
