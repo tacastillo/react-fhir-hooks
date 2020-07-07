@@ -4,7 +4,7 @@ import { useResource } from './useResource';
 import Client from 'fhirclient/lib/Client';
 import { IUsePatient, IPatientParsed } from '../rfh-types';
 
-const usePatient = (client: Client): IUsePatient => {
+export const usePatient = (client: Client): IUsePatient => {
   const { resource, ...rest } = useResource(
     client,
     `Patient/${client.patient.id}`
@@ -44,5 +44,3 @@ const usePatient = (client: Client): IUsePatient => {
     ...values
   };
 };
-
-export default usePatient;

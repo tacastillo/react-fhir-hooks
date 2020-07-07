@@ -4,7 +4,7 @@ import Client from 'fhirclient/lib/Client';
 import { mockClient } from './mocks/mockClient';
 import Patient from './mocks/Patient.json';
 
-import usePatient from '../src/hooks/usePatient';
+import { usePatient } from '../src/hooks/usePatient';
 
 import { LoadingState } from '../src/rfh-types';
 
