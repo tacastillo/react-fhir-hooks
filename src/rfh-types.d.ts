@@ -1,11 +1,5 @@
 import { fhirclient } from 'fhirclient/lib/types';
-
-export enum LoadingState {
-  NOT_STARTED,
-  IN_PROGRESS,
-  SUCCESS,
-  FAILURE
-}
+import { LoadingState } from './constants';
 
 export interface IUseResource {
   resource: fhirclient.FHIR.Resource | undefined;
@@ -44,4 +38,18 @@ export interface IMedicationRequestParsed {
 
 export interface IUseMedicationRequest extends IUseResource {
   medications: IMedicationRequestParsed[] | undefined;
+}
+
+export interface IConditionParsed {
+  clinicalStatus: string | undefined;
+  verificationStatus: string | undefined;
+  category: string | undefined;
+  severity: string | undefined;
+  code: string | undefined;
+  bodySite: string | undefined;
+  onsetDateTime: string | undefined;
+}
+
+export interface IUseCondition extends IUseResource {
+  conditions: IConditionParsed[] | undefined;
 }

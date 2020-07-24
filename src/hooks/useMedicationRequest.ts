@@ -99,7 +99,7 @@ export const useMedicationRequest = (
 
   return {
     resource,
-    ...rest,
-    medications: values
+    medications: values,
+    ...rest
   };
 };

@@ -6,7 +6,7 @@ import Patient from './mocks/Patient.json';
 
 import { usePatient } from '../src/hooks/usePatient';
 
-import { LoadingState } from '../src/rfh-types';
+import { LoadingState } from '../src/constants';
 
 test('that the patient can be fetched', async () => {
   const client = mockClient(Patient);

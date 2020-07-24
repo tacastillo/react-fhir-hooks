@@ -1,6 +1,6 @@
 {
   "name": "react-fhir-hooks",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "A library of React hooks that easily query and parse through HL7 FHIR resources and search results",
   "main": "dist/index.js",
   "types": "dist/types.d.js",
@@ -16,8 +16,7 @@
     "lint": "eslint . --ext .ts",
     "lint-fix": "eslint . --ext .ts --fix",
     "format": "prettier --config .prettierrc 'src/**/*.ts' --write",
-    "check": "npm run format && npm run lint-fix && npm run typecheck && npm run test",
-    "prepublish": "npm run check && npm run build"
+    "check": "npm run format && npm run lint-fix && npm run typecheck && npm run test"
   },
   "dependencies": {
     "fhirclient": "^2.3.1"

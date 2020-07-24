@@ -5,7 +5,7 @@ import { mockClient } from './mocks/mockClient';
 import Patient from './mocks/Patient.json';
 
 import { useResource } from '../src';
-import { LoadingState } from '../src/rfh-types';
+import { LoadingState } from '../src/constants';
 
 test('that a resource can be fetched', async () => {
   const client = mockClient(Patient);

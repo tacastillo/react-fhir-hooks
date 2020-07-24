@@ -3,7 +3,8 @@ import { useState, useEffect } from 'react';
 import { fhirclient } from 'fhirclient/lib/types';
 import Client from 'fhirclient/lib/Client';
 
-import { LoadingState, IUseResource } from '../rfh-types';
+import { LoadingState } from '../constants';
+import { IUseResource } from '../rfh-types';
 
 export const useResource = (
   fhirClient: Client,

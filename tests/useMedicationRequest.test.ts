@@ -6,9 +6,9 @@ import MedicationRequest from './mocks/MedicationRequest.json';
 
 import { useMedicationRequest } from '../src/hooks/useMedicationRequest';
 
-import { LoadingState } from '../src/rfh-types';
+import { LoadingState } from '../src/constants';
 
-test('that the patient can be fetched', async () => {
+test('that medications can be fetched', async () => {
   const client = mockClient(MedicationRequest);
   const { result, waitForNextUpdate } = renderHook(() =>
     useMedicationRequest(client as Client, {
